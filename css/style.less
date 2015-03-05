@@ -1,0 +1,102 @@
+
+@import "build/lesshat.less";
+@import "fonts/gothambold1.css";
+@import "fonts/gothambook.css";
+
+// shortcut and variables
+// fix variables
+@bold : 700;
+@semibold: 600;
+@normal : 400;
+
+// custom variables
+@orange : #ed4f23;
+@black : #212121;
+@white : #fff;
+@purple : #440a56;
+@gotham : 'GothamBook';
+@gothamBold : 'gothambold1';
+@container-size :1030px;
+
+a {.transition(all 0.5s ease)
+	&:hover {color: @orange;text-decoration: none;}
+}
+button , input {background: none; outline: none; border: none;}
+body {font: 12px/1.5em @gotham; color: @black;}
+p {font: normal 14px/1.6em @gotham;}
+.rounded {.border-radius(15px);}
+.nopadding {padding: 0;}
+.double-padding {padding: 30px;}
+
+//settings
+.container {max-width: @container-size;}
+h1 {font-size: 48px;color: @orange; font-family: @gotham;}
+h3 {font-size: 16px;color: @white; font-family: @gothamBold;}
+p {font-size: 16px; color: @white;  font-family: @gotham;margin: 0;}
+
+.bg {
+	background: url(../img/bg.jpg) repeat;
+}
+header {
+	background: url(../img/bg-header.png) no-repeat left top;
+	.banner {width: 100%; img {width: 100%;}}
+}
+article {margin-bottom: 30px;
+	.left-sidebar {
+		h2, li {
+			font-size: 22px;
+			color: @orange;
+		}
+		ol {margin-left: 0px;
+			li {
+				background: url(../img/line.png) no-repeat bottom left;
+				padding-bottom: 30px;
+				.radio {
+					background: @white;
+					border:1px solid @purple;
+					height: 40px;
+					padding: 10px 0 10px 20px;
+
+					&:hover {
+						background: @orange;
+						color: @white;
+					}
+
+					label {
+						font-size: 16px;
+						color: @black;
+						font-family: @gotham;
+					}
+				}
+				.box {
+
+				}
+			}
+		}//ol
+		button {
+			width: 100%;
+			height: 40px;
+			background: @orange;
+			color: @white;
+			font-size: 24px;
+		}
+	}//leftsidebar
+	.right-sidebar {
+		.box {
+			padding-bottom: 15px;
+			margin-top: 15px;
+			border-bottom: 1px solid #440a56;
+			.thumb {
+				img {
+					width: 100%;
+					border-bottom: 6px solid @orange;
+				}
+			}
+			.description {
+				margin-top: 10px;
+				h3 {margin: 0;padding: 0;}
+			}
+			&:first-child {margin-top: 0;}
+		}//box
+	}//rightsidebar
+}
