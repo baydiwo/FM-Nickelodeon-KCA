@@ -57,13 +57,19 @@ p {font-size: 16px; color: @white;  font-family: @gotham;margin: 0;}
 	left: 0;
 	z-index: 1;
 }
-.bg-footer {
+.bg-footer, .bg-footer-thanks {
 	background: url(../img/bg-footer.png) no-repeat center center;
 	width: 524px;
 	height: 564px;
 	position: absolute;
 	bottom: 0;
 	right: -60px;
+}
+.bg-footer-thanks {
+	background: url(../img/bg-footer-thanks.png) no-repeat center center;
+	width: 516px;
+	height: 374px;
+	bottom: -14px;
 }
 header {
 	position: relative;
@@ -196,4 +202,18 @@ article {
 			&:first-child {margin-top: 0;}
 		}//box
 	}//rightsidebar
+	.thanks {
+		text-align: center;
+		h1 {
+			font-size: 72px;
+			margin-top: 80px;
+			margin-bottom: 30px;
+			font-weight: @semibold;
+		}
+		.thank-description {
+			font-size: 24px;
+			color: @white;
+			margin-bottom: 130px;
+		}
+	}
 }
