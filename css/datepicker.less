@@ -6,7 +6,15 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  */
- 
+
+@import "build/lesshat.less";
+
+@white : #fff;
+@grayLighter : #eee;
+@grayLight : #ddd;
+@btnPrimaryBackground : #eaeaea;
+@baseFontSize : 14px;
+
 .datepicker {
 	top: 0;
 	left: 0;
@@ -88,7 +96,7 @@
 			}
 		}
 	}
-	
+
 	th {
 		&.switch {
 			width: 145px;
@@ -98,7 +106,7 @@
 			font-size: @baseFontSize * 1.5;
 		}
 	}
-	
+
 	thead tr:first-child th {
 		cursor: pointer;
 		&:hover{

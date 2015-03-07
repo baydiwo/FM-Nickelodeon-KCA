@@ -1,4 +1,4 @@
-label {
+.radio label {
 	display: inline-block;
 	cursor: pointer;
 	position: relative;
@@ -14,7 +14,7 @@ input[type=radio],
 input[type=checkbox] {
 	display: none;
 }
-label:before {
+.radio label:before {
 	content: "";
 	display: inline-block;
 
