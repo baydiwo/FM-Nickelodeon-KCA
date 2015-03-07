@@ -2,6 +2,7 @@
 @import "build/lesshat.less";
 @import "fonts/gothambold1.css";
 @import "fonts/gothambook.css";
+@import "checkbox.css";
 
 // shortcut and variables
 // fix variables
@@ -16,69 +17,146 @@
 @purple : #440a56;
 @gotham : 'GothamBook';
 @gothamBold : 'gothambold1';
-@container-size :1030px;
+@container-size :960px;
 
-a {.transition(all 0.5s ease)
+a {.transition(all 0.5s ease);
 	&:hover {color: @orange;text-decoration: none;}
 }
 button , input {background: none; outline: none; border: none;}
 body {font: 12px/1.5em @gotham; color: @black;}
 p {font: normal 14px/1.6em @gotham;}
 .rounded {.border-radius(15px);}
-.nopadding {padding: 0;}
+.no-padding {padding: 0;}
 .double-padding {padding: 30px;}
 
 //settings
-.container {max-width: @container-size;}
-h1 {font-size: 48px;color: @orange; font-family: @gotham;}
+.container {max-width: @container-size;position: relative;}
+h1 {font-size: 38px;color: @orange; font-family: @gotham;}
 h3 {font-size: 16px;color: @white; font-family: @gothamBold;}
 p {font-size: 16px; color: @white;  font-family: @gotham;margin: 0;}
 
 .bg {
 	background: url(../img/bg.jpg) repeat;
 }
+.rounded-up {
+	.border-radius(15px 15px 0 0);
+}
+.rounded-down {
+	.border-radius(0 0 15px 15px);
+}
+.banner-wrapper {
+	overflow: hidden;
+}
+.bg-header {
+	background: url(../img/banner.jpg) no-repeat left top;
+	width: 100%;
+	height: 287px;
+	position: relative;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+.bg-footer {
+	background: url(../img/bg-footer.png) no-repeat center center;
+	width: 656px;
+	height: 564px;
+	position: absolute;
+	bottom: 0;
+	right: -60px;
+}
 header {
-	background: url(../img/bg-header.png) no-repeat left top;
+	position: relative;
+	z-index: 2;
 	.banner {width: 100%; img {width: 100%;}}
 }
-article {margin-bottom: 30px;
+article {
+	margin-bottom: 30px;
+	position: relative;
 	.left-sidebar {
 		h2, li {
 			font-size: 22px;
 			color: @orange;
 		}
-		ol {margin-left: 0px;
-			li {
-				background: url(../img/line.png) no-repeat bottom left;
-				padding-bottom: 30px;
-				.radio {
-					background: @white;
-					border:1px solid @purple;
-					height: 40px;
-					padding: 10px 0 10px 20px;
-
-					&:hover {
-						background: @orange;
-						color: @white;
+		.thequestion {
+			ol {
+				margin: 0px;
+				padding: 0;
+				list-style-position: inside;
+				li {
+					background: url(../img/line.png) no-repeat bottom left;
+					position: relative;
+					padding-bottom: 30px;
+					margin: 0 0 30px 0;
+					&:first-child {
+						h2 {margin-top: 0;}
 					}
+					.radio {
+						input[type="radio"]:checked + label {
+						    background-color:@orange;
+						    color: @white;
+						}
 
-					label {
-						font-size: 16px;
-						color: @black;
-						font-family: @gotham;
+						label {
+							.transition(all 0.2s linear);
+							font-size: 16px;
+							color: @black;
+							font-family: @gotham;
+							background: @white;
+							border:1px solid @purple;
+							height: 40px;
+							padding: 10px 0 10px 40px;
+							width: 100%;
+							&:hover {
+								background: @orange;
+								color: @white;
+							}
+						}
+					}
+					.box {
+
 					}
 				}
-				.box {
-
-				}
-			}
-		}//ol
+			}//ol
+		}
+		.nopel {
+			color: @orange;
+			font-size: 18px;
+			margin-bottom: 10px;
+			display: block;
+		}
+		.form-nick {
+			width: 100%;
+			height: 30px;
+			background: @white;
+			border: 1px solid @purple;
+			color: @black;
+			padding: 0 15px;
+		}
 		button {
+			margin: 30px 0;
 			width: 100%;
 			height: 40px;
 			background: @orange;
 			color: @white;
 			font-size: 24px;
+			.transition(all 0.2s linear);
+			&:hover {
+				background: lighten(@orange,10%);
+			}
+
+		}
+		.terms {
+			span {
+				font-size: 14px;
+				font-weight: @bold;
+				color: @white;}
+			ol {
+				padding-left: 17px;
+				li {
+					color: @white;
+					font-size: 12px;
+				}
+			}
 		}
 	}//leftsidebar
 	.right-sidebar {
