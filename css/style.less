@@ -18,7 +18,7 @@
 @purple : #440a56;
 @gotham : 'GothamBook';
 @gothamBold : 'gothambold1';
-@container-size :960px;
+@container-size :930px;
 
 a {.transition(all 0.5s ease);
 	&:hover {color: @orange;text-decoration: none;}
@@ -31,7 +31,7 @@ p {font: normal 14px/1.6em @gotham;}
 .double-padding {padding: 30px;}
 
 //settings
-.container {max-width: @container-size;position: relative;}
+.container {width: @container-size;position: relative;}
 h1 {font-size: 38px;color: @orange; font-family: @gotham;}
 h3 {font-size: 16px;color: @white; font-family: @gothamBold;}
 p {font-size: 16px; color: @white;  font-family: @gotham;margin: 0;}
@@ -189,6 +189,16 @@ article {
 			padding-bottom: 15px;
 			margin-top: 15px;
 			border-bottom: 1px solid #440a56;
+			&:first-child h2.title {
+				margin-top: 0;
+			}
+			h2.title {
+				font-size: 22px;
+				color: @orange;
+				font-family: @gothamBold;
+				// font-weight: @bold;
+				text-align: left;
+			}
 			.thumb {
 				img {
 					width: 100%;
