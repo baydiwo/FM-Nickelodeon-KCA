@@ -18,7 +18,7 @@
 @purple : #440a56;
 @gotham : 'GothamBook';
 @gothamBold : 'gothambold1';
-@container-size :960px;
+@container-size :930px;
 
 a {.transition(all 0.5s ease);
 	&:hover {color: @orange;text-decoration: none;}
@@ -31,7 +31,7 @@ p {font: normal 14px/1.6em @gotham;}
 .double-padding {padding: 30px;}
 
 //settings
-.container {max-width: @container-size;position: relative;}
+.container {width: @container-size;position: relative;overflow: hidden;}
 h1 {font-size: 38px;color: @orange; font-family: @gotham;}
 h3 {font-size: 16px;color: @white; font-family: @gothamBold;}
 p {font-size: 16px; color: @white;  font-family: @gotham;margin: 0;}
